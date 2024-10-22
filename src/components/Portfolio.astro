@@ -1,0 +1,39 @@
+---
+import PortfolioCard from "./PortfolioCard.astro";
+const portfolioItems = [
+  {
+    title: "My First Project",
+    description: "This is a project I made",
+    image: "/img/dog.jpg",
+    link: "",
+  },
+  {
+    title: "My Second Project",
+    description: "This is another project I made",
+    image: "/img/cat.jpg",
+    link: "#",
+  },
+  {
+    title: "My Third Project",
+    description: "This is a third project I made",
+    image: "/img/bunny.jpg",
+    link: "#",
+  },
+];
+---
+
+<div class="flex flex-col gap-2">
+  <h1 class="text-2xl font-semibold text-foreground">My Stuff</h1>
+  <div class="flex gap-2 flex-wrap">
+    {
+      portfolioItems.map((item) => (
+        <PortfolioCard
+          title={item.title}
+          description={item.description}
+          image={item.image}
+          link={item.link}
+        />
+      ))
+    }
+  </div>
+</div>
