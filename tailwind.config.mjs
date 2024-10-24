@@ -56,6 +56,7 @@ export default {
 			  },
 			  fontFamily: {
 				sans: ['Inter', ...defaultTheme.fontFamily.sans],
+				groupi: ['Geologica', ...defaultTheme.fontFamily.sans],
 			  },
 		},
 	},

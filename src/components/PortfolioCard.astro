@@ -1,20 +1,20 @@
 ---
-const { title, description, image, link } = Astro.props;
+const { title, description, color, link, logo, font } = Astro.props;
 ---
 
 <a
   href={link}
-  class={`w-full md:w-64 h-64 border border-border rounded-md group relative bg-cover bg-center`}
-  style={`background-image: url(${image});`}
+  class={`w-full md:w-64 h-36 rounded-md transition-all hover:scale-110 focus:scale-100`}
+  style={`background-color: ${color};`}
 >
-  <div class="w-full h-full absolute top-0 left-0 z-20 py-3 px-4">
-    <h1 class="text-xl font-medium text-foreground">
-      {title}
-    </h1>
+  <div class="w-full h-full py-3 px-4">
+    <div class="flex items-center text-foreground gap-1 mb-1">
+      <div set:html={logo} />
+      <!-- font-groupi -->
+      <h1 class={`text-2xl font-${font} font-semibold`}>
+        {title}
+      </h1>
+    </div>
     <p class="text-foreground">{description}</p>
-  </div>
-  <div
-    class="absolute top-0 left-0 z-10 w-full h-full bg-accent opacity-20 group-hover:opacity-50 transition-all"
-  >
   </div>
 </a>
