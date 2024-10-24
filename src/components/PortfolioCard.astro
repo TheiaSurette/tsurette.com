@@ -2,10 +2,10 @@
 const { title, description, color, link, logo, font } = Astro.props;
 ---
 
+<!-- bg-groupi hover:bg-groupi/80 -->
 <a
   href={link}
-  class={`w-full md:w-64 h-36 rounded-md transition-all hover:scale-110`}
-  style={`background-color: ${color};`}
+  class={`w-full md:w-64 h-36 rounded-md transition-all hover:bg-${color}/80 bg-${color}`}
 >
   <div class="w-full h-full py-3 px-4">
     <div class="flex items-center text-foreground gap-1 mb-1">
